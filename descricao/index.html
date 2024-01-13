@@ -1,0 +1,793 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Isso garante que o corpo da página tenha no mínimo 100% da altura da viewport */
+            margin: 0;
+        }
+
+        .body {
+            flex: 1; /* Isso faz com que o conteúdo principal ocupe todo o espaço restante */
+        }
+
+        .footer {
+            margin-top: auto; /* Empurra o rodapé para o final da página */
+        }
+
+        .body {
+            font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  margin-right: 7%;
+  margin-left: 7%;
+
+}
+body {
+margin: 0;
+padding: 0;
+min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos 100% da altura da visualização */
+display: flex;
+flex-direction: column;
+background-color: #1B2838;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #1B2838;
+  width: auto;
+  height: 50px;
+}
+
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
+}
+.shop{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.conta{
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+div.icon {
+  margin-right: 5px;
+}
+img.icon{
+  height: 35px;
+  width: 35px;
+  border-radius: 50px;
+}
+
+.shop:hover, .conta:hover {
+  background-color: #8d909b98; /* Cor mais clara ao passar o mouse */
+}
+
+.imgdesc{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    align-items: end;
+}
+.estrelas{
+    display: flex;
+    margin-bottom: 10px;
+    margin-left: -100px;
+}
+
+.imgestrela{
+    width: 50px;
+    height: 50px;
+    margin-left: 5;
+    cursor: pointer;
+}
+footer {
+background-color: #1B2838;
+color: white;
+padding: 20px;
+text-align: center;
+border-top: 1px solid white; /* Linha branca separando do conteúdo principal */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.footer {
+background-color: #1B2838;
+color: white;
+padding: 20px;
+text-align: center;
+border-top: 1px solid white; /* Linha branca separando do conteúdo principal */
+margin-top: 40px; /* Faz o footer ficar no final da página */
+font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+#nomeJogo{
+    text-align: center;
+    font-size: 50px;
+}
+
+.comentario {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        #commentInput {
+            width: 70%;
+            padding: 8px;
+
+        }
+
+        #submitBtn {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+#price{
+    font-size: 50px;
+    margin-left: -60px;
+    color: white;
+}
+
+@media screen and (max-width: 2000px) {
+    .imgdesc {
+        grid-template-columns: 1fr;
+    }
+    .estrelas{
+    margin-left: 1px;
+    margin-top: 20px;
+}
+#price{
+    margin-left: 1px;
+    margin-top: 20px;
+}
+.b{
+    margin-top: 20px;
+}
+}
+
+.login {
+  display: none;
+  color: white;
+  flex-direction: column; /* Adicionado para posicionar os elementos em coluna */
+  align-items: center;
+  position: fixed;
+  height: 50px;
+  width: 100px;
+  padding-left: 20px;
+  margin-top: 50px;
+  background-color: #8d909b98;
+}
+
+.contabotao {
+    display: grid;
+    grid-area: 1fr;
+  }
+
+  .imgjogo{
+height: 300px; /* Isso garante que a altura seja ajustada automaticamente, mantendo a proporção da imagem */
+
+}
+
+.imgdesc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+#descricaoJogo{
+    text-align: center;
+}
+#avaliarBtn{
+    height: 50px;
+        width: 120px;
+        border-radius: 50px;
+        font-size: x-large;
+        background-color: #3B82F6;
+        color: white;
+        margin-left: 10px;
+    }
+
+    .b{
+        height: 80px;
+        width: 200px;
+        border-radius: 50px;
+        font-size: x-large;
+        background-color: #3B82F6;
+        color: white;
+    }
+  /*responsividade*/
+@media screen and (max-width: 500px) {
+.body {
+  margin-right: 2%;
+  margin-left: 2%;
+
+}
+.slides {
+height: 100px;
+}
+
+.categorias {
+font-size: 10px;
+}
+
+.rectangles-container {
+display: block;
+}
+
+.left-section, .right-section {
+font-size: 10px;
+}
+.shop{
+font-size: 10px;
+}
+.conta{
+font-size: 10px;
+}
+h1{
+display: none;
+}
+div.icon {
+margin-right: 5px;
+}
+img.icon{
+height: 30px;
+width: 30px;
+}
+.jogos{
+grid-template-columns: 1fr 1fr;
+}
+
+.imgjogo{
+height: 200px; /* Isso garante que a altura seja ajustada automaticamente, mantendo a proporção da imagem */
+}
+h1#nomeJogo{
+    display: block;
+}
+.imgdesc {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+}
+
+.comentarios {
+        border: 1px solid #ccc;
+        padding: 10px;
+        margin: 10px;
+        border-radius: 8px;
+    }
+
+    /* Estilo para cada comentário (retângulo menor) */
+    .comentario {
+    display: flex;
+    margin: 20px;
+    border: 1px solid #ccc;
+    max-width: 100%; /* Defina o valor desejado para a largura máxima */
+    word-wrap: break-word; /* Garante que as palavras que não cabem na largura sejam quebradas */
+    max-height: auto; /* ou defina um valor mínimo desejado */
+}
+.lixeira{
+    margin-left: auto;
+    cursor: pointer;
+    width: 40px;
+    height: 40px;
+}
+
+</style>
+    <title>Gamedan</title>
+</head>
+<body>
+<div class="body">
+    <header>
+        <div class="left-section">
+          <div class="icon">
+            <img class="icon" src="https://i.postimg.cc/W3C9Z5bC/logo.jpg" alt="conta">
+
+          </div>
+          <h1 style="color: white;">Gamedan</h1>
+        </div>
+        <div class="right-section">
+            <div class="shop" style="height: 40px;" onclick="shop()">
+                <div class="icon">
+                    <img class="icon" src="https://i.postimg.cc/QCLr7D8C/vista-lateral-vazia-do-carrinho-de-compras-2.png" alt="shop">
+                </div>
+                <h1 style="color: white;"> Shop</h1>
+            </div>
+            
+            <div class="conta" style="height: 40px;" onclick="conta()">
+                <div class="icon">
+                    <img class="icon" src="https://i.postimg.cc/XYLYdrBP/do-utilizador.png" alt="conta">
+                </div>
+                <h1 style="color: white;"> Conta</h1>
+            </div>
+           
+        </div>
+      </header>
+    
+    <section>
+        <div class="descricao-container">
+            <h1 id="nomeJogo" style="color: white;"></h1>
+                <div class="imgdesc" >
+                    <img id="imgJogo" class="imgjogo" alt="Imagem do Jogo">
+                    <strong id="price"></strong>
+                    <div class="estrelas">
+                        <img class="imgestrela"  src="https://i.postimg.cc/TYhQhV9g/estrela-2.png" alt="">
+                        <img class="imgestrela"  src="https://i.postimg.cc/TYhQhV9g/estrela-2.png" alt="">
+                        <img class="imgestrela" src="https://i.postimg.cc/TYhQhV9g/estrela-2.png" alt="">
+                        <img class="imgestrela"  src="https://i.postimg.cc/TYhQhV9g/estrela-2.png" alt="">
+                        <img class="imgestrela"  src="https://i.postimg.cc/TYhQhV9g/estrela-2.png" alt="">
+                        <button id="avaliarBtn" onclick="avaliarJogo()">Avaliar</button>
+                    </div>
+                    <button class="b" onclick="comprarJogo()">comprar</button>
+                </div>
+            <p id="descricaoJogo" style="color: white; margin-top: 50px;"></p>
+            <!-- Adicione mais informações do jogo conforme necessário -->
+        </div>
+    </section>
+
+            <div class="comentarios">
+
+                <!-- Adicione uma div para exibir os comentários -->
+            <div id="comentariosContainer">
+                <!-- Comentários serão exibidos aqui -->
+            </div>
+
+            <form id="commentForm" action="/salvar-comentario" method="POST">
+                <input type="hidden" id="gameId" name="gameId" value="colocar_valor_do_id_aqui">
+                <input type="text" id="commentInput" name="comment" placeholder="Digite seu comentário..." required>
+                <button type="submit" id="submitBtn">Enviar</button>
+            </form>
+        </div>
+    
+    
+</div>
+<footer class="footer">
+    <img src="https://i.postimg.cc/FzBrkz8f/circulo-c-1.png" alt="fim" style="width: 15px; height: 15px; margin-right: 5px;">
+    <span>2024 Gamedan</span>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+
+document.addEventListener('DOMContentLoaded', function () {
+        // Função para obter o ID do usuário
+        function obterIdDoUsuario() {
+            const cookiesString = document.cookie;
+            const cookiesArray = cookiesString.split(';').map(cookie => cookie.trim());
+
+            for (const cookie of cookiesArray) {
+                const [cookieName, cookieValue] = cookie.split('=');
+
+                if (cookieName === 'userId') {
+                    return cookieValue;
+                }
+            }
+
+            return null;
+        }
+
+        // Função para mostrar ou ocultar a lixeira com base no usuário logado
+        function atualizarEstiloLixeira() {
+        const userId = obterIdDoUsuario();
+        const lixeiras = document.querySelectorAll(`.comentario[data-userid="${userId}"] .lixeira`);
+
+        lixeiras.forEach(lixeira => {
+            lixeira.style.display = userId ? 'inline-block' : 'none';
+        });
+    }
+
+        // Chame a função ao carregar a página e ao detectar mudanças de estado
+        document.addEventListener('DOMContentLoaded', function () {
+            atualizarEstiloLixeira();
+        });
+
+        window.addEventListener('popstate', function () {
+            atualizarEstiloLixeira();
+        });
+    });
+
+
+    function obterIdDoUsuario() {
+    // Recupera o cookie com o nome 'userId'
+    const userIdCookie = document.cookie.split(';').find(cookie => cookie.trim().startsWith('userId='));
+
+    if (userIdCookie) {
+        // Extrai e retorna o valor do cookie
+        return userIdCookie.split('=')[1];
+    } else {
+        // Se o cookie não for encontrado, retorna null ou outro valor padrão
+        return null;
+    }
+}
+
+function excluirComentario(id) {
+    if (!id) {
+        console.error('ID do comentário inválido.');
+        return;
+    }
+
+    console.log(`.comentario[data-id="${id}"]`);
+    const comentarioElement = document.querySelector(`.comentario[data-id="${id}"]`);
+    console.log(comentarioElement);
+
+    if (!comentarioElement) {
+        console.error('Elemento do comentário não encontrado.');
+        return;
+    }
+
+    // Verifica se o comentário pertence ao usuário logado
+    const userId = obterIdDoUsuario();
+    const comentarioUserId = comentarioElement.dataset.userid;
+
+    if (userId === comentarioUserId) {
+        // Confirmação para excluir o comentário
+        const confirmacao = confirm('Tem certeza que deseja excluir este comentário?');
+
+        if (confirmacao) {
+            // Enviar uma solicitação DELETE para a rota de excluir-comentario
+            fetch(`/excluir-comentario/${id}`, {
+                method: 'DELETE',
+            })
+                .then(response => response.json())
+                .then(data => {
+                    console.log(data.message);
+
+                    // Exibir um alerta indicando que o comentário foi excluído com sucesso
+                    alert('Comentário excluído com sucesso!');
+
+                    // Recarrega os comentários após a exclusão
+                    carregarComentarios();
+                })
+                .catch(error => {
+                    console.error('Erro ao excluir o comentário:', error);
+                    // Implemente qualquer lógica adicional em caso de erro
+                });
+        }
+    } else {
+        // Se o comentário não pertence ao usuário logado, exibe uma mensagem ou faz outra ação necessária
+        alert('Você só pode excluir seus próprios comentários.');
+    }
+}
+
+
+
+
+     // Carrega os comentários quando a página é carregada
+     $(document).ready(function () {
+        carregarInformacoesJogo();
+        carregarComentarios();
+    });
+
+    // Chame a função ao detectar mudanças de estado
+    window.addEventListener('popstate', function() {
+        carregarInformacoesJogo();
+        carregarComentarios();
+    });
+
+    // Função para carregar e exibir comentários
+async function carregarComentarios() {
+    try {
+        const gameId = obterIdDoJogo(); // Chame a função para obter o ID do jogo
+
+        // Faz uma solicitação para obter os comentários associados ao jogo
+        const response = await fetch(`/api/comentarios?gameId=${gameId}`);
+        const comentarios = await response.json();
+
+        // Limpa a div de comentários antes de adicionar os novos
+        $('#comentariosContainer').empty();
+
+        // Adiciona os comentários à div
+        comentarios.forEach(comentario => {
+            const comentarioElement = `<div class="comentario" data-id="${comentario.id}" data-userid="${comentario.userId}">
+                <p style="margin-right: 10px;">${comentario.userName}:</p>
+                <p>${comentario.comment}</p>
+                <img src="https://i.postimg.cc/RCb8QZ0h/lixeira-de-reciclagem.png" class="lixeira" alt="Excluir" onclick="excluirComentario(${comentario.id})">
+            </div>`;
+            $('#comentariosContainer').append(comentarioElement);
+        });
+    } catch (error) {
+        console.error('Erro ao carregar comentários:', error);
+    }
+}
+
+// Adiciona um ouvinte de evento para o envio do formulário
+$('#commentForm').submit(function (event) {
+    event.preventDefault();  // Impede o envio padrão do formulário
+
+    // Realiza o envio do formulário usando AJAX
+    $.ajax({
+        type: 'POST',
+        url: '/salvar-comentario',
+        data: $('#commentForm').serialize(),
+        success: function (data) {
+            // Se o comentário for salvo com sucesso, recarrega os comentários
+            carregarComentarios();
+            // Limpa o campo de comentário após o envio
+            $('#commentInput').val('');
+        },
+        error: function (error) {
+            console.error('Erro ao salvar comentário:', error);
+        }
+    });
+});
+
+// Carrega os comentários quando a página é carregada
+$(document).ready(function () {
+    carregarComentarios();
+});
+
+
+function obterIdDoJogo() {
+        // Implemente a lógica para obter o ID do jogo, por exemplo, através da URL
+        // Retorne o ID do jogo
+        const params = new URLSearchParams(window.location.search);
+        return params.get('id');  // Substitua com a lógica real de obtenção do ID do jogo
+    }
+
+
+    
+    function obterIdDoUsuario() {
+    const cookiesString = document.cookie;
+    const cookiesArray = cookiesString.split(';').map(cookie => cookie.trim());
+
+    for (const cookie of cookiesArray) {
+        const [cookieName, cookieValue] = cookie.split('=');
+
+        if (cookieName === 'userId') {  // Certifique-se de que este nome corresponde ao nome do cookie definido no login
+            return cookieValue;
+        }
+    }
+
+    return null;
+}
+
+
+    function obterIdDoJogo() {
+    // Implemente a lógica para obter o ID do jogo, por exemplo, através da URL
+    // Retorne o ID do jogo
+    const params = new URLSearchParams(window.location.search);
+    return params.get('id');  // Substitua com a lógica real de obtenção do ID do jogo
+}
+
+
+    function comprarJogo() {
+        const gameId = obterIdDoJogo();  // Chame a função para obter o ID do jogo
+        const userId = obterIdDoUsuario();  // Implemente a lógica para obter o ID do usuário
+
+        // Verificar se o usuário está autenticado
+    if (!userId) {
+        // Se não estiver autenticado, redirecionar para a página de login
+        alert('Faça login para comprar o jogo.');
+        window.location.href = '/login';  // Substitua '/login' pela rota real da sua página de login
+        return;
+    }
+
+        // Enviar uma solicitação POST para a rota /comprar
+        fetch('/comprar', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ gameId, userId }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+            
+            // Exibir um alerta indicando que a compra foi bem-sucedida
+            alert('Compra realizada com sucesso!');
+
+            // Implemente qualquer lógica adicional após a compra bem-sucedida, se necessário
+        })
+        .catch(error => {
+            console.error('Erro ao comprar o jogo:', error);
+            // Implemente qualquer lógica adicional em caso de erro
+        });
+    }
+
+    function conta(){
+        window.location.href = './conta';
+    }
+    function shop(){
+        window.location.href = './shop';
+    }
+    function voltar(){
+            window.location.href = './jogos';
+        }
+        async function carregarInformacoesJogo() {
+    console.log('Função carregarInformacoesJogo chamada');
+
+    const params = new URLSearchParams(window.location.search);
+    const gameId = params.get('id');
+    const noCache = params.get('nocache') || Date.now(); // Usando timestamp como noCache
+
+    console.log('ID do jogo:', gameId);
+
+    if (gameId) {
+        try {
+            // Buscar informações do jogo no banco de dados
+            const response = await fetch(`/api/jogos?id=${gameId}&nocache=${noCache}`);
+            
+            // Verificar se a resposta é bem-sucedida
+            if (!response.ok) {
+                console.error(`Erro na requisição: ${response.status} - ${response.statusText}`);
+                return;
+            }
+
+            const contentType = response.headers.get('content-type');
+
+            // Verificar se o tipo de conteúdo é JSON
+            if (contentType && contentType.includes('application/json')) {
+                const data = await response.json();
+
+                const jogo = data.find(j => j.id == gameId); // Encontra o jogo com o ID correspondente
+
+                if (jogo) {
+                document.getElementById('nomeJogo').innerText = jogo.name;
+                document.getElementById('imgJogo').src = jogo.image;
+                document.getElementById('descricaoJogo').innerText = jogo.description;
+                document.getElementById('gameId').value = jogo.id; // Preencha o campo gameId
+
+                    // Formatando o preço com "R$" na frente e substituindo "." por ","
+                    const formattedPrice = `R$ ${jogo.price.replace('.', ',')}`;
+                    document.getElementById('price').innerText = formattedPrice;
+
+                    // Buscar a quantidade de estrelas do banco de dados
+                    const starsResponse = await fetch(`/api/estrelas?gameId=${gameId}&userId=${obterIdDoUsuario()}`);
+                    
+                    // Verificar se a resposta é bem-sucedida
+                    if (!starsResponse.ok) {
+                        console.error(`Erro na requisição de estrelas: ${starsResponse.status} - ${starsResponse.statusText}`);
+                        return;
+                    }
+
+                    const starsData = await starsResponse.json();
+
+                    // Preencher as estrelas com base na quantidade do banco de dados
+                    preencherEstrelas(starsData.qt);
+
+                    // Preencha outras informações do jogo conforme necessário
+                } else {
+                    console.error('Jogo não encontrado');
+                }
+            } else {
+                console.error('A resposta não é do tipo JSON');
+            }
+        } catch (error) {
+            console.error('Erro ao carregar informações do jogo:', error);
+        }
+    } else {
+        console.error('ID do jogo não fornecido');
+    }
+}
+
+
+function preencherEstrelas(qtEstrelas) {
+    // Define as URLs das imagens
+    const normalImage = 'https://i.postimg.cc/TYhQhV9g/estrela-2.png';
+    const selectedImage = 'https://i.postimg.cc/nLnLCTwR/estrela-1.png';
+
+    // Percorre as estrelas e muda a imagem com base na quantidade
+    $('.imgestrela').each(function (i) {
+        if (i < qtEstrelas) {
+            // Índice menor que a quantidade de estrelas, portanto, a estrela está selecionada
+            $(this).attr('src', selectedImage);
+        } else {
+            // Índice maior ou igual à quantidade de estrelas, portanto, a estrela não está selecionada
+            $(this).attr('src', normalImage);
+        }
+    });
+}
+
+function avaliarJogo() {
+        // Coloque aqui o código para lidar com a avaliação do jogo
+        const gameId = obterIdDoJogo();  // Chame a função para obter o ID do jogo
+        const userId = obterIdDoUsuario();  // Implemente a lógica para obter o ID do usuário
+
+        // Verificar se o usuário está autenticado
+        if (!userId) {
+            // Se não estiver autenticado, redirecionar para a página de login
+            alert('Faça login para avaliar o jogo.');
+            window.location.href = '/login';  // Substitua '/login' pela rota real da sua página de login
+            return;
+        }
+
+        // Obtenha a quantidade de estrelas selecionadas pelo usuário
+        const qtEstrelas = $('.imgestrela[src$="estrela-1.png"]').length;
+
+        // Enviar uma solicitação POST para a rota de salvar-avaliacao
+        fetch('/salvar-avaliacao', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify({ gameId, userId, qtEstrelas }),
+        })
+        .then(response => response.json())
+        .then(data => {
+            console.log(data.message);
+
+            // Exibir um alerta indicando que a avaliação foi bem-sucedida
+            alert('Avaliação realizada com sucesso!');
+
+            // Implemente qualquer lógica adicional após a avaliação bem-sucedida, se necessário
+        })
+        .catch(error => {
+            console.error('Erro ao avaliar o jogo:', error);
+            // Implemente qualquer lógica adicional em caso de erro
+        });
+    }
+
+
+function exibirEstrelasUsuario(qtEstrelas) {
+    const selectedImage = 'https://i.postimg.cc/nLnLCTwR/estrela-1.png';
+    const normalImage = 'https://i.postimg.cc/TYhQhV9g/estrela-2.png';
+
+    // Percorrer as estrelas e definir a imagem com base na quantidade de estrelas
+    $('.imgestrela').each(function(i) {
+        if (i < qtEstrelas) {
+            $(this).attr('src', selectedImage);
+        } else {
+            $(this).attr('src', normalImage);
+        }
+    });
+}
+
+
+$(document).ready(function() {
+        $('.imgestrela').click(function() {
+            // Obtém o índice da estrela clicada
+            const index = $(this).index();
+
+            // Define as URLs das imagens
+            const normalImage = 'https://i.postimg.cc/TYhQhV9g/estrela-2.png';
+            const selectedImage = 'https://i.postimg.cc/nLnLCTwR/estrela-1.png';
+
+            // Percorre as estrelas e muda a imagem
+            $('.imgestrela').each(function(i) {
+                if (i <= index) {
+                    // Índice da estrela menor ou igual à estrela clicada
+                    $(this).attr('src', selectedImage);
+                } else {
+                    // Índice da estrela maior que a estrela clicada
+                    $(this).attr('src', normalImage);
+                }
+            });
+        });
+    });
+    
+    // Chame a função ao carregar a página e ao detectar mudanças de estado
+    document.addEventListener('DOMContentLoaded', carregarInformacoesJogo);
+    window.addEventListener('popstate', carregarInformacoesJogo);
+</script>
+
+    
+</body>
+</html>

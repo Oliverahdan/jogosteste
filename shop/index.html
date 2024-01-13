@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+    <style>
+        body {
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh; /* Isso garante que o corpo da página tenha no mínimo 100% da altura da viewport */
+            margin: 0;
+        }
+
+        .body {
+            flex: 1; /* Isso faz com que o conteúdo principal ocupe todo o espaço restante */
+        }
+
+        .footer {
+            margin-top: auto; /* Empurra o rodapé para o final da página */
+        }
+
+        .body {
+            font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  margin-right: 7%;
+  margin-left: 7%;
+
+}
+body {
+margin: 0;
+padding: 0;
+min-height: 100vh; /* Garante que o conteúdo ocupe pelo menos 100% da altura da visualização */
+display: flex;
+flex-direction: column;
+background-color: #1B2838;
+}
+
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px;
+  background-color: #1B2838;
+  width: auto;
+  height: 50px;
+}
+
+.left-section, .right-section {
+  display: flex;
+  align-items: center;
+}
+.shop{
+  display: flex;
+  align-items: center;
+  margin-right: 20px;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+.conta{
+  display: flex;
+  align-items: center;
+  font-size: 13px;
+  cursor: pointer;
+  padding: 5px;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+div.icon {
+  margin-right: 5px;
+}
+img.icon{
+  height: 35px;
+  width: 35px;
+  border-radius: 50px ;
+}
+
+.shop:hover, .conta:hover {
+  background-color: #8d909b98; /* Cor mais clara ao passar o mouse */
+}
+
+.imgdesc{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    align-items: end;
+}
+.estrelas{
+    display: flex;
+    align-items: end;
+}
+
+.imgestrela{
+    width: 50px;
+    height: 50px;
+    margin-right: 5px;
+}
+footer {
+background-color: #1B2838;
+color: white;
+padding: 20px;
+text-align: center;
+border-top: 1px solid white; /* Linha branca separando do conteúdo principal */
+display: flex;
+justify-content: center;
+align-items: center;
+}
+.footer {
+background-color: #1B2838;
+color: white;
+padding: 20px;
+text-align: center;
+border-top: 1px solid white; /* Linha branca separando do conteúdo principal */
+margin-top: 40px; /* Faz o footer ficar no final da página */
+font-family: "Kanit", sans-serif;
+  font-weight: 200;
+  font-style: normal;
+}
+
+#nomeJogo{
+    text-align: center;
+    font-size: 50px;
+}
+
+.comentario {
+            margin: 20px;
+            padding: 20px;
+            border: 1px solid #ccc;
+        }
+
+        #commentInput {
+            width: 70%;
+            padding: 8px;
+
+        }
+
+        #submitBtn {
+            padding: 8px 12px;
+            cursor: pointer;
+        }
+
+        .compra {
+            display: flex;
+            align-items: center;
+            width: calc(86% - 14%); /* 86% - 7% de margem à esquerda e 7% de margem à direita */
+            height: 60px;
+            margin: 10px 7%;
+            background-color: #2C3E50; /* Cor de fundo do retângulo de compra */
+            padding: 5px;
+            border-radius: 5px;
+            color: white;
+        }
+
+        .compra img {
+            width: 50px;
+            height: 50px;
+            margin-right: 10px;
+            border-radius: 5px;
+        }
+
+        .compra p {
+            margin: 0 10px; /* Adicionado espaçamento entre as informações */
+        }
+
+        .compra .excluir {
+            margin-left: auto;
+            cursor: pointer;
+        }
+    </style>
+    <title>Gamedan</title>
+</head>
+<body>
+<div class="body">
+    <header>
+        <div class="left-section">
+          <div class="icon">
+            <img class="icon" src="https://i.postimg.cc/W3C9Z5bC/logo.jpg" alt="conta">
+
+          </div>
+          <h1 style="color: white; cursor: pointer;" onclick="voltar()" >Gamedan</h1>
+        </div>
+        <div class="right-section">
+            <div class="shop" style="height: 40px;" onclick="shop()">
+                <div class="icon">
+                    <img class="icon" src="https://i.postimg.cc/QCLr7D8C/vista-lateral-vazia-do-carrinho-de-compras-2.png" alt="shop">
+                </div>
+                <h1 style="color: white;"> Shop</h1>
+            </div>
+            
+            <div class="conta" style="height: 40px;" onclick="conta()">
+                <div class="icon">
+                    <img class="icon" src="https://i.postimg.cc/XYLYdrBP/do-utilizador.png" alt="conta">
+                </div>
+                <h1 style="color: white;"> Conta</h1>
+            </div>
+           
+        </div>
+      </header>
+
+      <div id="mensagemSemCompras" style="text-align: center; font-size: 18px; margin-top: 50px; color: white;"></div>
+    
+    <section id="comprasSection" style="color: white;">
+        <!-- Aqui serão exibidas as compras -->
+    </section>
+
+</div>
+<footer class="footer">
+    <img src="https://i.postimg.cc/FzBrkz8f/circulo-c-1.png" alt="fim" style="width: 15px; height: 15px; margin-right: 5px;">
+    <span>2024 Gamedan</span>
+</footer>
+
+<script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+<script>
+    function conta(){
+        window.location.href = './conta';
+    }
+    function voltar(){
+            window.location.href = './jogos';
+    }
+
+    function excluirCompra(game, user) {
+    console.log('gameId:', game);
+    console.log('userId:', user);
+    // Verificar se o gameId e userId são válidos
+    if (!game || !user) {
+        alert('ID do jogo ou do usuário inválido. Tente novamente.');
+        return;
+    }
+
+    const confirmacao = confirm('Tem certeza que deseja excluir esta compra?');
+
+    if (confirmacao) {
+        // Fazer uma solicitação AJAX para excluir a compra no servidor
+        fetch(`/excluir-compra/${game}/${user}`, {
+            method: 'DELETE',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+        })
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error(`Erro ao excluir a compra: ${response.statusText}`);
+                }
+                // Recarregar a lista de compras após a exclusão
+                carregarCompras();
+            })
+            .catch(error => {
+                console.error(error);
+                alert('Erro ao excluir a compra. Tente novamente.');
+            });
+    }
+}
+
+
+
+
+
+    // Função para carregar as compras
+    function carregarCompras() {
+        const section = document.querySelector('#comprasSection');
+        const mensagemSemCompras = document.querySelector('#mensagemSemCompras');
+
+        // Fazer uma solicitação AJAX para obter as compras
+        fetch('/compras')
+            .then(response => {
+                if (response.status === 401) {
+                    throw new Error('Você não está autenticado.');
+                }
+                return response.json();
+            })
+            .then(compras => {
+                section.innerHTML = '';
+
+                if (compras.length === 0) {
+                    mensagemSemCompras.textContent = 'Você não tem compras.';
+                } else {
+                    compras.forEach(compra => {
+                        const compraElement = document.createElement('div');
+                        compraElement.classList.add('compra');
+
+                        compraElement.innerHTML = `
+                            <img src="${compra.image}" alt="${compra.name}" style="width: 50px; height: 50px; margin-right: 10px; border-radius: 5px;">
+                            <p>${compra.name}</p>
+                            <p>${compra.price}</p>
+                            <p style="display: block;">${compra.game}</p>
+                            <img src="https://i.postimg.cc/RCb8QZ0h/lixeira-de-reciclagem.png" alt="Excluir" class="excluir" onclick="excluirCompra('${compra.game}', '${compra.user}')">
+                        `;
+
+                        section.appendChild(compraElement);
+                    });
+                }
+            })
+            .catch(error => {
+                mensagemSemCompras.textContent = 'Erro na solicitação: ' + error.message;
+            });
+    }
+
+    document.addEventListener('DOMContentLoaded', function () {
+        carregarCompras();
+    });
+</script>
+
+    
+</body>
+</html>
