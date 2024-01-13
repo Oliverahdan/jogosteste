@@ -8,7 +8,7 @@ const app = express();
 const port = 3000;
 
 const dbConfig = {
-    host: 'localhost',
+    host: '192.168.232.207',
     user: 'root',
     password: 'danisilva0304',
     database: 'gamedan'
